@@ -15,7 +15,7 @@ import virustotal as virustotal
 json_array = '[{"id":1, "URL":"https://www.oit.ac.jp"},{"id":2, "URL":"https://www.youtube.com/"}]'
 url_dict = jsonarray2dict.Json2Dict(json_array)
 # url_dict = csv2dict.Csv2Dict("data/csv/ryousei.csv")
-print(url_dict)
+# print(url_dict)
 
 #start = time.time()
 

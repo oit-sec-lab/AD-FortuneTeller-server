@@ -38,7 +38,7 @@ def makedict():
             result[id] = {"ad": True}
         elif predict([data[i]]) == 0:
             result[id] = {"ad": False}
-    print(result)
+    return result
        
 if __name__ == '__main__':
     makedict()
