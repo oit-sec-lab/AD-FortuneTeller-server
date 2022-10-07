@@ -1,5 +1,4 @@
 import csv
-import json
 
 import requests
 import tldextract
@@ -12,7 +11,7 @@ class Crawler:
         self.href = list()
         self.site = list()
 
-    def clawring_check(self, enter: dict) -> csv:
+    def clawing_check(self, enter: dict) -> csv:
         for url in enter.values():
             self.url = url
             self.href.append(url)
@@ -21,7 +20,7 @@ class Crawler:
                 headers = {"User-Agent": "Mozilla/5.0"}
                 res = requests.get(url, timeout=9.0, headers=headers).text
             except:
-                print("clawring error: ", url)
+                print("clawing error: ", url)
             else:
                 soup = BeautifulSoup(res, "html.parser")
                 links = soup.find_all("a")
@@ -53,7 +52,7 @@ class Crawler:
             a = a.replace("\r", "").replace("\n", "")
 
             # ドメインを取得
-            # 例: https://www.google.com/ -> google.com
+            # 例: https://www.example.com/ -> example.com
             url_domain = ".".join(tldextract.extract(self.url)[1:])
             a_domain = ".".join(tldextract.extract(a)[1:])
 
@@ -63,16 +62,3 @@ class Crawler:
 
             # href内の重複を削除
             self.href = list(dict.fromkeys(self.href))
-
-
-if __name__ == "__main__":
-    # TODO: read json
-    with open("ok.json", "r") as f:
-        enter = json.load(f)
-
-    site = Crawler().clawring_check(enter)
-
-    # TODO: output
-    with open("url_test.csv", "w") as f:
-        writer = csv.writer(f, lineterminator="\n")
-        writer.writerows(site)
