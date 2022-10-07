@@ -15,4 +15,4 @@ def Csv2Dict(fname):
     return csv_dict
 
 if __name__ == "__main__":
-    print(Csv2Dict("ryousei.csv"))
+    print(Csv2Dict("../data/csv/ryousei.csv"))
