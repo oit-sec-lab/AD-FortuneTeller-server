@@ -4,8 +4,9 @@ AD-FortuneTeller(https://github.com/oit-sec-lab/AD-FortuneTeller-front) のサ�
 現在外部公開用のリソースで公開していないので、ローカルで利用してもらう事が前提となっています。
 
 ## 起動手順
-本リポジトリをクローン後、VirusTotalのAPIキーを取得し、/src/.envに
-API_KEY1="APIキー1"API_KEY1="APIキー2"API_KEY1="APIキー3"を設定してください。
+本リポジトリをクローン後、pip install -r requirements.txt を実行してください。
+<br>
+その後、VirusTotalのAPIキーを3つ取得し、/src/.env にAPI_KEY1="APIキー1"API_KEY1="APIキー2"API_KEY1="APIキー3"を設定してください。
 ```
 // /src/.env
 API_KEY1="APIキー1"
