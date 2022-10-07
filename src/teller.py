@@ -12,7 +12,7 @@ from crawling.crawling import Crawler
 from regex.regex import apply_regex
 from virustotal.virustotal import VT_search_10
 
-# 辞書に追加 
+# 辞書に追加
 results = {}
 
 def create_results(recv_json):
@@ -28,7 +28,7 @@ def create_results(recv_json):
    print(domain_dict)
    #domain_dict = {1: {'domain': 1}, 2: {'domain': 0},...}
 
-   
+
    #OK
    print("mscript")
    dict_extend, dict_network = filter(url_dict)
@@ -38,7 +38,7 @@ def create_results(recv_json):
 
    #OK
    print("regex")
-   craw_dict = Crawler().clawring_check(url_dict)
+   craw_dict = Crawler().clawing_check(url_dict)
    reg_dict = apply_regex(craw_dict)
    #reg_dict = {1: {"regex1": 0, "regex2": 0, "regex3": 0, "regex4": 0, "regex5": 1}, 2: {"regex1": 0, "regex2": 0, "regex3": 0, "regex4": 0, "regex5": 1}, ...}
 
